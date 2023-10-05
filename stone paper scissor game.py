@@ -11,20 +11,20 @@ def get_user_choice():
 
 
 # We write the Function to generate the computer's choice
-def get_computer_choice():
+def get_comp_choice():
     choices = ["Stone", "Paper", "Scissors"]
-    computer_choice = random.choice(choices)
-    return computer_choice
+    comp_choice = random.choice(choices)
+    return comp_choice
 
 
 # We write the Function to determine the winner
-def determine_winner(user_choice, computer_choice):
-    if user_choice == computer_choice:
+def determine_winner(user_choice, comp_choice):
+    if user_choice == comp_choice:
         return "The Game is Tie!"
     elif (
-        (user_choice == "Stone" and computer_choice == "Scissors")
-        or (user_choice == "Paper" and computer_choice == "Stone")
-        or (user_choice == "Scissors" and computer_choice == "Paper")
+        (user_choice == "Stone" and comp_choice == "Scissors")
+        or (user_choice == "Paper" and comp_choice == "Stone")
+        or (user_choice == "Scissors" and comp_choice == "Paper")
     ):
         return "Hurray!! You win the Match"
     else:
@@ -34,12 +34,12 @@ def determine_winner(user_choice, computer_choice):
 # We write the Main game loop
 while True:
     user_choice = get_user_choice()
-    computer_choice = get_computer_choice()
+    comp_choice = get_comp_choice()
 
     print(f"You chose: {user_choice}")
-    print(f"Computer chose: {computer_choice}")
+    print(f"Computer chose: {comp_choice}")
 
-    result = determine_winner(user_choice, computer_choice)
+    result = determine_winner(user_choice, comp_choice)
     print(result)
 
     play_again = input("Wanna Play Again? (Yeah/Nope): ")
